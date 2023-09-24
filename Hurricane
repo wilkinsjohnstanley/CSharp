@@ -1,0 +1,34 @@
+using System;
+using static System.Console;
+class Hurricane
+{
+   static void Main()
+   {
+      //declare constants and variables
+            const int CAT5 = 157, CAT4 = 130, CAT3 = 111, CAT2 = 96, CAT1 = 74;
+            int WindSpeed;
+            string inputString;
+            string Category;
+            string output;
+            WriteLine("What is the wind speed?");
+            inputString = ReadLine();
+            WindSpeed = Convert.ToInt32(inputString);
+            //determine hurricane category
+            if (WindSpeed >= CAT5)
+                Category = "a category 5 hurricane.";
+            else if (WindSpeed >= CAT4)
+                Category = "a category 4 hurricane.";
+            else if (WindSpeed >= CAT3)
+                Category = "a category 3 hurricane.";
+            else if (WindSpeed >= CAT2)
+                Category = "a category 2 hurricane.";
+            else if (WindSpeed >= CAT1)
+                Category = "a category 1 hurricane.";
+            else
+                Category = "not a hurricane.";
+
+            //output
+       output = "This is " + Category;
+       WriteLine(output);
+   }
+}
