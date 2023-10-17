@@ -74,10 +74,10 @@ namespace HomeSales
                         break;
                 }
             }
-            WriteLine("Danielle sold ${0}", dSum);
-            WriteLine("Edward sold ${0}", eSum);
-            WriteLine("Francis sold ${0}", fSum);
-            WriteLine("Total sales were ${0}", dSum+eSum+fSum);
+            WriteLine("Danielle sold ${0}.00", dSum);
+            WriteLine("Edward sold ${0}.00", eSum);
+            WriteLine("Francis sold ${0}.00", fSum);
+            WriteLine("Total sales were ${0}.00", dSum+eSum+fSum);
             if (dSum == eSum){
               WriteLine("There was a tie");
             } else if (dSum == fSum){
