@@ -8,49 +8,46 @@ modify the program so that the user must enter a number between 0 and 30, inclus
 If the user enters an incorrect number, the program prompts for a valid value.*/
 using System;
 using static System.Console;
+
 class GreenvilleRevenue
 {
-   static void Main()
-   {
-      const int ENTRANCE_FEE = 25;
-      string entryString;
-      int numThisYear;
-      int numLastYear;
-      int revenue;
+    static void Main()
+    {
+        int lastYearNum, thisYearNum;
+        string lastYear, thisYear;
+        double admission = 25.00, revenue;
 
-      Write("Enter number of contestants last year >> ");
-      entryString = ReadLine();
-      numLastYear = Convert.ToInt32(entryString);
-      if (numLastYear <= 0 && numLastYear >= 30){
-         WriteLine("Enter a valid number between 0 and 30");
-         WriteLine("Enter number of contestants last year ");
-      entryString = ReadLine();
-      numLastYear = Convert.ToInt32(entryString);
-      } else 
-      Write("Enter number of contestants this year ");
-      entryString = ReadLine();
-      numThisYear = Convert.ToInt32(entryString);
-      if (numThisYear <= 0 && numThisYear >= 30){
-         WriteLine("Enter a valid number between 0 and 30");
-         WriteLine("Enter number of contestants last year ");
-      entryString = ReadLine();
-      numLastYear = Convert.ToInt32(entryString);
-      }
+        do
+        {
+            Write("Enter the number of contestants in last year's competition: ");
+            lastYear = ReadLine();
+            lastYearNum = Int32.Parse(lastYear);
+        }
+        while (lastYearNum < 0 || lastYearNum > 30);
+
+        do
+        {
+            Write("Enter the number of contestants in this year's competition: ");
+            thisYear = ReadLine();
+            thisYearNum = Int32.Parse(thisYear);
+            bool moreThisYear = thisYearNum > lastYearNum;
+            revenue = thisYearNum * admission;
+        }
+        while (thisYearNum < 0 || thisYearNum > 30);
 
 
-             
-      revenue = numThisYear * ENTRANCE_FEE;
-      WriteLine("Last year's competition had {0} contestants, and this year's has {1} contestants",
-         numLastYear, numThisYear);
-      WriteLine("Revenue expected this year is {0}", revenue.ToString("C"));
-      if(numThisYear > 2 * numLastYear)
-         WriteLine("The competition is more than twice as big this year!");
-      else
-         if(numThisYear > numLastYear)
+        WriteLine();
+        if (thisYearNum > (lastYearNum * 2))
+            WriteLine("The Competition is more than twice as big this year!");
+        else
+            if (thisYearNum > lastYearNum)
             WriteLine("The competition is bigger than ever!");
-         else
-            if(numThisYear < numLastYear)
-               WriteLine("A tighter race this year! Come out and cast your vote!");
-   }
+        else
+            if (thisYearNum < lastYearNum)
+            WriteLine("A tighter race this year! Come out and cast your vote.");
+        // WriteLine("There were {0} contestants last year, and {1} contestants this year.", lastYearNum, thisYearNum);
+        // WriteLine("To say that there were more contestants this year than last would be {0}", moreThisYear);
+        WriteLine();
+        WriteLine("Expected revenue for this year's competition is: ${0}", revenue.ToString("F2"));
+    }
 }
-
