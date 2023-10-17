@@ -1,4 +1,5 @@
 /*
+MGCCC - Mississippi Gulf Coast Community College - C#
 Enter a salesperson initial >> D
 Enter amount of sale >> 10
 Enter next salesperson intital or Z to quit >> d
@@ -78,11 +79,11 @@ namespace HomeSales
             WriteLine("Edward sold ${0}.00", eSum);
             WriteLine("Francis sold ${0}.00", fSum);
             WriteLine("Total sales were ${0}.00", dSum+eSum+fSum);
-            if (dSum == eSum){
+            if (dSum == eSum && dSum != 0){
               WriteLine("There was a tie");
-            } else if (dSum == fSum){
+            } else if (dSum == fSum && dSum != 0){
               WriteLine("There was a tie");
-            } else if (eSum == fSum){
+            } else if (eSum == fSum && fSum != 0){
               WriteLine("There was a tie");
             } 
             if (dSum > eSum)
