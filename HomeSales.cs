@@ -1,3 +1,19 @@
+/*
+Enter a salesperson initial >> D
+Enter amount of sale >> 10
+Enter next salesperson intital or Z to quit >> d
+Enter amount of sale >> 2
+Enter next salesperson intital or Z to quit >> E
+Enter amount of sale >> 15
+Enter next salesperson intital or Z to quit >> f
+Enter amount of sale >> 9
+Enter next salesperson intital or Z to quit >> Z
+Danielle sold        $12.00
+Edward sold          $15.00
+Francis sold          $9.00
+Total sales were     $36.00
+Edward sold the most
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,17 +47,17 @@ namespace HomeSales
                 switch (in_who)
                 {
                     case 'D':
-                        Write("Enter amount of sale:");
+                        Write("Enter amount of sale: ");
                         dSum += double.Parse(ReadLine());
                         dCount++;
                         break;
                     case 'E':
-                        Write("Enter amount of sale:");
+                        Write("Enter amount of sale: ");
                         eSum += double.Parse(ReadLine());
                         eCount++;
                         break;
                     case 'F':
-                        Write("Enter amount of sale:");
+                        Write("Enter amount of sale: ");
                         fSum += double.Parse(ReadLine());
                         fCount++;
                         break;
@@ -63,9 +79,7 @@ namespace HomeSales
               WriteLine("There was a tie");
             } else if (eSum == fSum){
               WriteLine("There was a tie");
-            }
-
-
+            } 
             if (dSum > eSum)
             {
                 if (dSum > fSum)
