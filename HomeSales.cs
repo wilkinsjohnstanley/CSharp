@@ -41,7 +41,7 @@ namespace HomeSales
           
             while (in_who != 'Z')
             {
-                if (dSum == 0 && eSum == 0 && fSum == 0)){
+                if (dSum == 0 && eSum == 0 && fSum == 0){
                     Write("Enter a salesperson initial ");
                      in_who = char.ToUpper(ReadLine()[0]);
                 }  else {
