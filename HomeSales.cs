@@ -38,11 +38,16 @@ namespace HomeSales
             char in_who = 'n';
 
            
-
+          
             while (in_who != 'Z')
             {
+                if (dSum == 0 && eSum == 0 && fSum == 0)){
+                    Write("Enter a salesperson initial ");
+                     in_who = char.ToUpper(ReadLine()[0]);
+                }  else {
                 Write("Enter next salesperson intital or Z to quit: ");
                 in_who = char.ToUpper(ReadLine()[0]);
+                }
 
                 switch (in_who)
                 {
@@ -70,8 +75,8 @@ namespace HomeSales
                 }
             }
             WriteLine("Danielle sold ${0}", dSum);
-            WriteLine("Edward   sold ${0}", eSum);
-            WriteLine("Francis  sold ${0}", fSum);
+            WriteLine("Edward sold ${0}", eSum);
+            WriteLine("Francis sold ${0}", fSum);
             WriteLine("Total sales were ${0}", dSum+eSum+fSum);
             if (dSum == eSum){
               WriteLine("There was a tie");
