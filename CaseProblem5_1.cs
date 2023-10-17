@@ -17,12 +17,28 @@ class GreenvilleRevenue
       int numThisYear;
       int numLastYear;
       int revenue;
+
       Write("Enter number of contestants last year >> ");
       entryString = ReadLine();
       numLastYear = Convert.ToInt32(entryString);
+      if (numLastYear >= 0 && numLastYear <= 30{
+         Write("Enter a valid number between 0 and 30");
+         Write("Enter number of contestants last year >> ");
+      entryString = ReadLine();
+      numLastYear = Convert.ToInt32(entryString);
+      } else 
       Write("Enter number of contestants this year >> ");
       entryString = ReadLine();
       numThisYear = Convert.ToInt32(entryString);
+      if (numThisYear >= 0 && numThisYear <= 30{
+         Write("Enter a valid number between 0 and 30");
+         Write("Enter number of contestants last year >> ");
+      entryString = ReadLine();
+      numLastYear = Convert.ToInt32(entryString);
+      }
+
+
+             
       revenue = numThisYear * ENTRANCE_FEE;
       WriteLine("Last year's competition had {0} contestants, and this year's has {1} contestants",
          numLastYear, numThisYear);
