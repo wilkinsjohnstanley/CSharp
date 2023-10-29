@@ -1,3 +1,15 @@
+/*
+• BinarySearch() method
+– a sorted list of objects is split in half repeatedly as the search
+gets closer and closer to a match
+– Similar to the “guess a Number between 1 and 100” game
+– Start with Is it less than 50? Less than 25? Less than 12? Etc.
+• When not to use BinarySearch()
+– If your array items are not arranged in ascending order
+– If your array holds duplicate values and you want to find all of
+them
+– If you want to find a range match rather than an exact match
+*/
 using System;
 using static System.Console;
 class BinarySearchDemo
